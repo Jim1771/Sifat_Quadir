@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Sifat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;600&family=Homemade+Apple&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#bb377d;
+      --soft:#fff0f8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:'Poppins',system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#4a2c2a; background:linear-gradient(120deg,#fff0f5,#ffe4e1); overflow-x:hidden; scroll-behavior:smooth;
+    }
+    /* Header */
+    header{
+      min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; text-align:center; color:#f8f8f8;
+      background:url(moon.jpg) center/cover no-repeat; 
+    }
+    header::after{content:""; position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.45));}
+    header h1, header p{position:relative; z-index:1}
+    header h1{margin:0; font-size:3rem; letter-spacing:.5px; opacity:0; transform:scale(.92); transition:all 1.2s ease}
+    header p{margin:.75rem 0 0; max-width:680px; opacity:0; transform:translateY(14px); transition:all 1.2s ease .2s}
+
+    /* Sections */
+    section{max-width:900px; margin:60px auto; padding:40px; background:#ffffffcc; border-radius:24px; box-shadow:0 10px 28px rgba(0,0,0,.12); backdrop-filter:blur(8px); opacity:0; transform:translateY(24px); transition:all 1s ease}
+    section.show{opacity:1; transform:translateY(0)}
+    h2{margin:0 0 18px; text-align:center; color:var(--pink); position:relative; font-weight:700}
+    h2::after{content:""; display:block; width:60px; height:3px; background:var(--pink); margin:10px auto 0; border-radius:3px}
+
+    /* Timeline */
+    .timeline{position:relative; margin:32px 0; padding-left:42px}
+    .timeline::before{content:""; position:absolute; left:18px; top:0; bottom:0; width:3px; background:var(--pink)}
+    .timeline p{margin:18px 0; padding:14px 16px; background:var(--soft); border-radius:12px; position:relative; opacity:0; transform:translateX(-50px); transition:all .9s ease}
+    .timeline p::before{content:'❤'; position:absolute; left:-30px; top:50%; transform:translateY(-50%); color:var(--pink)}
+    .timeline p:nth-child(even){transform:translateX(50px)}
+    .timeline p.show{opacity:1; transform:translateX(0)}
+
+    /* Essence poetic lines */
+    .essence p{margin:14px 0; background:#fff; border-radius:12px; padding:14px 18px; box-shadow:0 4px 14px rgba(0,0,0,.08); font-style:italic; text-align:center; opacity:0; transform:translateY(18px); transition:all .9s ease}
+    .essence p.show{opacity:1; transform:translateY(0)}
+
+    /* Songs */
+    iframe{display:block; margin:18px auto; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,.18); opacity:0; transform:scale(.9); transition:all .9s ease}
+    iframe.show{opacity:1; transform:scale(1)}
+
+    /* Shayari & Poem */
+    .poetic{font-style:italic; text-align:center; color:#333; font-size:1.12rem; line-height:1.9}
+    .poetic .line{display:block; margin:10px 0}
+    .poetic .word{opacity:0; display:inline-block; transform:translateY(8px); transition:opacity .4s ease, transform .4s ease}
+    .poetic.show .word{opacity:1; transform:translateY(0)}
+
+    /* Footer Birthday wish */
+    footer{margin-top:60px; text-align:center; padding:44px 16px; background:linear-gradient(135deg,#fbd3e9,#bb377d); color:#fff; position:relative; overflow:hidden; border-radius:0}
+    .birthday{margin:10px auto 0; font-size:1.8rem; font-family:'Great Vibes', cursive; text-shadow:0 0 8px #ff77aa, 0 0 16px #ff99cc, 0 0 24px #ffbfd6}
+    .byline{display:block; margin-top:6px; font-family:'Homemade Apple', cursive; font-size:1.2rem; letter-spacing:.2px}
+    .heart{position:absolute; bottom:-6px; color:rgba(255,255,255,.75); font-size:1.6rem; animation:floatUp 7s linear infinite}
+    .heart:nth-child(1){left:15%; animation-delay:0s}
+    .heart:nth-child(2){left:35%; animation-delay:2s}
+    .heart:nth-child(3){left:55%; animation-delay:4s}
+    .heart:nth-child(4){left:75%; animation-delay:6s}
+    @keyframes floatUp{0%{transform:translateY(0) scale(1); opacity:1} 100%{transform:translateY(-280px) scale(1.4); opacity:0}}
+
+    /* Responsive */
+    @media (max-width:720px){
+      header h1{font-size:2.2rem}
+      section{margin:28px 12px; padding:28px}
+      .timeline{padding-left:34px}
+      .timeline::before{left:14px}
+      .timeline p::before{left:-26px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>For Sifat</h1>
+    <p>This is a journey of affection and care, where moments bloom quietly, and two souls find echoes of each other.</p>
+  </header>
+
+  <section>
+    <h2>Our Journey</h2>
+    <div class="timeline">
+      <p><strong>First Meeting:</strong> From a click on Jeevansathi to a connection that stayed.</p>
+      <p><strong>Conversations:</strong> Between WhatsApp texts and voice notes, a rhythm of care unfolded.</p>
+      <p><strong>Reflections:</strong> You mirror me in confidence, charm, and soul—almost 85% of who I am.</p>
+      <p><strong>Daily Moments:</strong> Even in the busiest hours, one message is enough to remind us—we’re not alone.</p>
+    </div>
+  </section>
+
+  <section class="essence">
+    <h2>Your Essence</h2>
+    <p>You are cool and confident, yet there’s a softness in your grace that makes every moment with you feel gentle and uplifting. Your intellect shines through in everything you do, paired with a calm and reassuring presence that brings peace to those around you.,</p>
+    <p>Watching you dance is like seeing light move in the room—you bring energy and joy wherever you go. You are truly the soul of every gathering, effortlessly turning ordinary moments into something special.</p>
+    <p>In your smile, I see the romance of SRK; in your gaze, the charm of Tom Cruise. Your strength reminds me of John Wick—steady and unwavering—yet there’s a depth in you, reminiscent of Irrfan Khan, and a melody in your voice, like Atif Aslam’s songs,</p>
+    <p>Beyond all this, your heart listens with patience and care, your laughter sparkles like stars in a quiet night, and every word you speak brings warmth and comfort. I am amazed by the curiosity in your eyes and the brilliance of your mind—it dances with light and thoughtfulness.</p>
+    <p>You are caring yet fierce, a rare and beautiful combination, and your presence lingers long after the moment has passed, leaving everything brighter and more meaningful,</p>
+    <p>No idea what destiny have planned things for us.</p>
+    <p>But one thing is sure,</p>
+    <p>We both will embrace each others as beautiful memories in the darkness and sadness.</p>
+  </section>
+
+  <section>
+    <h2>Songs for Us</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Jw4wLVnFJ-E?si=jjrewVjAWH145n9u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rLR37BR88T0?si=GhT2PCp4k2JQDGgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h2>Shayari for You</h2>
+    <div class="poetic shayari" id="shayari">
+      <span class="line">तेरे होने से लम्हे ख़ास हो जाते हैं,</span>
+      <span class="line">ख़ामोशी में भी जज़्बात बयान हो जाते हैं।</span>
+      <span class="line">ये सिलसिला है दिल की चाहत का,</span>
+      <span class="line">जो अनकहे अल्फ़ाज़ भी अरमान हो जाते हैं।</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Poem for You</h2>
+    <div class="poetic" id="poem">
+      <span class="line">In echoes of silence, your voice remains,</span>
+      <span class="line">A thread of calm through fleeting chains.</span>
+      <span class="line">Not in grand words, nor in fleeting skies,</span>
+      <span class="line">But in simple moments, the heart replies.</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>This is just a glimpse of what you mean, Sifat—an unfinished poem we keep writing together.</p>
+    <p class="birthday">Happy Birthday to you dear Sifat,<span class="byline">by Quadir</span></p>
+    <span class="heart">❤</span>
+    <span class="heart">❤</span>
+    <span class="heart">❤</span>
+    <span class="heart">❤</span>
+  </footer>
+
+  <script>
+    // Reveal header
+    window.addEventListener('load',() => {
+      document.querySelector('header h1').style.opacity = 1;
+      document.querySelector('header h1').style.transform = 'scale(1)';
+      document.querySelector('header p').style.opacity = 1;
+      document.querySelector('header p').style.transform = 'translateY(0)';
+    });
+
+    // Intersection Observer for section fade-in
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); }});
+    },{threshold:.2});
+    document.querySelectorAll('section, .timeline p, .essence p, iframe').forEach(el=>io.observe(el));
+
+    // Word-by-word fade for Shayari & Poem
+    function splitIntoWords(container){
+      const lines = [...container.querySelectorAll('.line')];
+      lines.forEach(line => {
+        const words = line.textContent.trim().split(/(\s+)/); // keep spaces
+        line.textContent='';
+        words.forEach((w)=>{
+          const span = document.createElement('span');
+          span.className = w.trim()? 'word' : '';
+          span.textContent = w;
+          line.appendChild(span);
+        });
+      });
+    }
+
+    function observeWords(container){
+      const wordIO = new IntersectionObserver((entries,obs)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            container.classList.add('show');
+            const words = container.querySelectorAll('.word');
+            words.forEach((w,i)=> setTimeout(()=> w.style.opacity = 1, 60*i));
+            words.forEach((w,i)=> setTimeout(()=> w.style.transform = 'translateY(0)', 60*i));
+            obs.unobserve(entry.target);
+          }
+        });
+      },{threshold:.4});
+      wordIO.observe(container);
+    }
+
+    const shayariEl = document.getElementById('shayari');
+    const poemEl = document.getElementById('poem');
+    splitIntoWords(shayariEl); splitIntoWords(poemEl);
+    observeWords(shayariEl); observeWords(poemEl);
+  </script>
+</body>
+</html>
